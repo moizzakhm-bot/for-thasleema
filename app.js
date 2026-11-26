@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initAmbientCanvas();
-  initAudioSynth();
   initBreathingCycle();
   initAccordions();
   initHugDispenser();
@@ -106,97 +105,7 @@ function initAmbientCanvas() {
 }
 
 /* ============================================================
-   2. PROCEDURAL AMBIENT SYNTHESIZER (Web Audio API)
-   Generates a peaceful, warm, ethereal lofi-piano / chime loop
-============================================================ */
-function initAudioSynth() {
-  const toggleBtn = document.getElementById('music-toggle');
-  const toggleText = document.getElementById('music-text');
-  if (!toggleBtn) return;
-
-  let audioCtx = null;
-  let isPlaying = false;
-  let melodyInterval = null;
-
-  // Romantic chord progression frequencies (F maj9 -> Dm9 -> Bb maj7 -> C sus4)
-  const chordNotes = [
-    [174.61, 220.00, 261.63, 329.63, 349.23], // Fmaj7 / Fmaj9
-    [146.83, 220.00, 261.63, 329.63, 349.23], // Dm9
-    [116.54, 174.61, 233.08, 293.66, 349.23], // Bbmaj7
-    [130.81, 196.00, 261.63, 293.66, 392.00]  // Csus4
-  ];
-
-  let chordIndex = 0;
-
-  function playTone(freq, duration = 3.5, type = 'sine', gainLevel = 0.04) {
-    if (!audioCtx) return;
-    try {
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.linearRampToValueAtTime(gainLevel, audioCtx.currentTime + 0.6);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-      console.warn('Audio synth error:', e);
-    }
-  }
-
-  function playArpeggio() {
-    if (!isPlaying || !audioCtx) return;
-    const currentChord = chordNotes[chordIndex];
-
-    // Play lush pad chord
-    currentChord.forEach((noteFreq, idx) => {
-      setTimeout(() => {
-        if (isPlaying) {
-          playTone(noteFreq, 4.2, 'sine', 0.03);
-          // Soft octave chime
-          if (idx === 3 || idx === 4) {
-            playTone(noteFreq * 2, 2.8, 'triangle', 0.015);
-          }
-        }
-      }, idx * 240);
-    });
-
-    chordIndex = (chordIndex + 1) % chordNotes.length;
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-
-    if (!isPlaying) {
-      isPlaying = true;
-      toggleBtn.classList.add('playing');
-      toggleText.textContent = 'Pause Music';
-      playArpeggio();
-      melodyInterval = setInterval(playArpeggio, 4500);
-    } else {
-      isPlaying = false;
-      toggleBtn.classList.remove('playing');
-      toggleText.textContent = 'Play Melody';
-      if (melodyInterval) clearInterval(melodyInterval);
-    }
-  });
-}
-
-/* ============================================================
-   3. CALMING BREATHING CYCLE
+   2. CALMING BREATHING CYCLE
 ============================================================ */
 function initBreathingCycle() {
   const breathText = document.getElementById('breath-text');

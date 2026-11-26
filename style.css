@@ -67,52 +67,6 @@ body {
   z-index: 0;
 }
 
-/* Audio Widget */
-.audio-widget {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 100;
-}
-
-.audio-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(214, 69, 98, 0.25);
-  border-radius: var(--radius-full);
-  color: var(--wine-dark);
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(110, 40, 60, 0.1);
-  transition: var(--transition);
-}
-
-.audio-btn:hover {
-  background: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(214, 69, 98, 0.2);
-  color: var(--primary-rose);
-}
-
-.audio-btn.playing {
-  background: var(--primary-rose);
-  color: #fff;
-  border-color: var(--primary-rose);
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(214, 69, 98, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(214, 69, 98, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(214, 69, 98, 0); }
-}
-
 /* ================= HERO SECTION ================= */
 .hero-section {
   position: relative;
@@ -1117,6 +1071,204 @@ body {
   fill: var(--primary-rose);
 }
 
+/* ================= SECTION 6: MEMORABLE MOMENTS ================= */
+.moments-chip {
+  background: rgba(254, 237, 241, 0.9);
+  border-color: rgba(214, 69, 98, 0.3);
+}
+
+.moments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.moment-feature-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 245, 247, 0.92) 100%);
+  border: 1px solid rgba(214, 69, 98, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 42px 45px;
+  box-shadow: 0 16px 40px -10px rgba(110, 40, 60, 0.12);
+  position: relative;
+}
+
+.moment-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px dashed rgba(214, 69, 98, 0.18);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.moment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(214, 69, 98, 0.1);
+  border: 1px solid rgba(214, 69, 98, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--primary-rose);
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.moment-badge i {
+  width: 16px;
+  height: 16px;
+}
+
+.moment-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  color: var(--wine-dark);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.moment-lead-text {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.moment-quote-box {
+  background: rgba(255, 255, 255, 0.85);
+  border-left: 4px solid var(--primary-rose);
+  border-radius: 4px var(--radius-md) var(--radius-md) 4px;
+  padding: 22px 28px;
+  box-shadow: 0 4px 15px rgba(214, 69, 98, 0.06);
+}
+
+.moment-quote-box p {
+  font-family: var(--font-serif);
+  font-size: 1.25rem !important;
+  font-style: italic;
+  color: var(--wine-dark) !important;
+  line-height: 1.75;
+  margin-bottom: 0 !important;
+}
+
+/* Moments Grid */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.moment-sub-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 32px 26px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.moment-sub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -10px rgba(110, 40, 60, 0.15);
+  border-color: rgba(214, 69, 98, 0.3);
+}
+
+.moment-icon-tag {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.moment-icon-tag.rose { background: #ffe4e9; color: #d64562; }
+.moment-icon-tag.warm { background: #fff3e0; color: #e65100; }
+.moment-icon-tag.green { background: #e8f5e9; color: #2e7d32; }
+
+.moment-icon-tag i {
+  width: 24px;
+  height: 24px;
+}
+
+.moment-sub-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--wine-dark);
+  margin-bottom: 12px;
+}
+
+.moment-sub-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Grand Declaration to Thachu Banner */
+.thachu-banner {
+  background: linear-gradient(135deg, #d64562 0%, #aa2b48 50%, #7d1c32 100%);
+  border-radius: var(--radius-lg);
+  padding: 45px 35px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 45px rgba(170, 43, 72, 0.35);
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.thachu-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.thachu-heart {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  animation: heart-beat 1.6s infinite ease-in-out;
+}
+
+.thachu-banner h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.thachu-declaration {
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+.thachu-subtext {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
 /* ================= FOOTER ================= */
 .site-footer {
   position: relative;
@@ -1192,17 +1344,7 @@ body {
     padding: 30px 22px;
   }
 
-  .audio-widget {
-    top: 16px;
-    right: 16px;
-  }
-
-  .audio-btn span {
-    display: none;
-  }
-
-  .audio-btn {
-    padding: 10px;
-    border-radius: 50%;
+  .moment-feature-card {
+    padding: 30px 22px;
   }
 }
