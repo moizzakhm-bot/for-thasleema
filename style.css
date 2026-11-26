@@ -382,6 +382,48 @@ body {
   margin: 25px 0 10px !important;
 }
 
+/* Halal Dua & Ocean Promise Box */
+.halal-promise-box {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 245, 247, 0.95) 100%);
+  border: 1px solid rgba(214, 69, 98, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 38px 40px;
+  text-align: center;
+  margin-bottom: 45px;
+  box-shadow: 0 15px 35px rgba(110, 40, 60, 0.09);
+  position: relative;
+}
+
+.halal-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.halal-promise-box h3 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  color: var(--wine-dark);
+  margin-bottom: 14px;
+}
+
+.halal-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--primary-rose);
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 12px;
+}
+
+.halal-sub {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
 /* 4 Pillars Grid */
 .grid-cards-4 {
   display: grid;

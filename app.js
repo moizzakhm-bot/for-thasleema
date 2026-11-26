@@ -163,7 +163,7 @@ function initSmileGenerator() {
     "Your smile has this magical superpower of making even my hardest days melt away into pure peace.",
     "Did you know? Thinking about your laughter is literally my favorite habit in the world.",
     "You don't need to have everything figured out today. You are doing so much better than you give yourself credit for.",
-    "You have the most beautiful soul, Thasleema. The kindness you carry makes the universe a gentler place.",
+    "You have the most beautiful soul, Thachu. The kindness you carry makes the universe a gentler place.",
     "Whenever you feel small, remember: to me, you are the entire world.",
     "Take a look in the mirror today — that woman looking back is brilliant, gorgeous, and endlessly loved.",
     "A special reminder for my Thachu: You are going to get that job in Dubai soon, and everything is going to be completely okay! I believe in you with all my heart. 🇦🇪✨",
@@ -209,7 +209,7 @@ function initForgivenessAction() {
       forgiven = true;
       statusDiv.innerHTML = `
         <span style="color: #8f5813; font-weight: 600;">
-          🕊️ "Thank you for the grace of your forgiveness, my Thasleema. I cherish your heart with all my soul and promise to keep protecting it with tenderness and love."
+          🕊️ "Thank you for the grace of your forgiveness, my Thachu. I cherish your heart with all my soul and promise to keep protecting it with tenderness and love."
         </span>
       `;
 
@@ -256,7 +256,8 @@ function initLoveJar() {
     "My hands fit best when holding yours. Always remember you have a permanent home in my heart.",
     "I promise to always be your number one fan, your midnight listener, and your biggest protector.",
     "Don't worry about what lies ahead, my love. You will get that job in Dubai soon, everything will fall into place, and all will be okay. I'm right here with you.",
-    "You are not just my love; you are my peace, my home, and my favorite adventure, Thasleema."
+    "I am willing to do anything for you, Thachu — cross oceans for you, and my dua's will hug you and keep you safe until the day I can hold you in a halal way.",
+    "You are not just my love; you are my peace, my home, and my favorite adventure, Thachu."
   ];
 
   let currentNoteIdx = 0;
