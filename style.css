@@ -231,20 +231,6 @@ body {
   box-shadow: 0 10px 25px rgba(214, 69, 98, 0.12);
 }
 
-.btn-hug {
-  background: linear-gradient(135deg, #e85875 0%, #c43856 100%);
-  color: #fff;
-  width: 100%;
-  padding: 15px 24px;
-  font-size: 1.05rem;
-  box-shadow: 0 10px 25px rgba(232, 88, 117, 0.35);
-}
-
-.btn-hug:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 14px 32px rgba(232, 88, 117, 0.45);
-}
-
 .btn-apology {
   background: linear-gradient(135deg, #9b631d 0%, #76450d 100%);
   color: #fff;
@@ -635,11 +621,9 @@ body {
 }
 
 /* ================= SECTION 3: CHEER UP ================= */
-.cheer-interactive-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-  margin-bottom: 55px;
+.cheer-interactive-center {
+  max-width: 620px;
+  margin: 0 auto 55px;
 }
 
 .interactive-box {
@@ -670,22 +654,6 @@ body {
   color: var(--text-muted);
   font-size: 0.95rem;
   margin-bottom: 22px;
-}
-
-.hug-counter {
-  margin-top: 14px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--wine-dark);
-}
-
-.hug-status-msg {
-  min-height: 24px;
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--primary-rose) !important;
-  margin-top: 8px !important;
-  margin-bottom: 0 !important;
 }
 
 .smile-card-display {

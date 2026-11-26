@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAmbientCanvas();
   initBreathingCycle();
   initAccordions();
-  initHugDispenser();
   initSmileGenerator();
   initForgivenessAction();
   initLoveJar();
@@ -152,52 +151,7 @@ function initAccordions() {
 }
 
 /* ============================================================
-   5. VIRTUAL HUG DISPENSER
-============================================================ */
-function initHugDispenser() {
-  const hugBtn = document.getElementById('send-hug-btn');
-  const countSpan = document.getElementById('hug-count');
-  const msgP = document.getElementById('hug-message');
-  if (!hugBtn || !countSpan) return;
-
-  let hugs = 0;
-
-  const hugMessages = [
-    'Wrapping you in the warmest, tightest embrace right now! ❤️',
-    'Holding you close. You are never, ever alone, Thasleema. 🌸',
-    'Sending you soft forehead kisses and endless warmth. 🤍',
-    'A long, cozy hug from my heart directly to yours. 💫',
-    'Deep breath... I am holding you right here, safe and sound. 🧸',
-    'Can you feel it? My arms wrapped tightly around you! ✨'
-  ];
-
-  hugBtn.addEventListener('click', () => {
-    hugs++;
-    countSpan.textContent = hugs;
-
-    const randomMsg = hugMessages[Math.floor(Math.random() * hugMessages.length)];
-    msgP.textContent = randomMsg;
-
-    // Trigger sweet heart confetti
-    if (window.confetti) {
-      window.confetti({
-        particleCount: 35,
-        spread: 60,
-        origin: { y: 0.65 },
-        colors: ['#d64562', '#ff758f', '#ffb3c1', '#ffffff']
-      });
-    }
-
-    // Button animation feedback
-    hugBtn.style.transform = 'scale(0.96)';
-    setTimeout(() => {
-      hugBtn.style.transform = '';
-    }, 150);
-  });
-}
-
-/* ============================================================
-   6. RANDOM SMILE / CHEER-UP GENERATOR
+   4. RANDOM SMILE / CHEER-UP GENERATOR
 ============================================================ */
 function initSmileGenerator() {
   const smileCard = document.getElementById('smile-card');
