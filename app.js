@@ -211,6 +211,7 @@ function initSmileGenerator() {
     "You have the most beautiful soul, Thasleema. The kindness you carry makes the universe a gentler place.",
     "Whenever you feel small, remember: to me, you are the entire world.",
     "Take a look in the mirror today — that woman looking back is brilliant, gorgeous, and endlessly loved.",
+    "A special reminder for my Thachu: You are going to get that job in Dubai soon, and everything is going to be completely okay! I believe in you with all my heart. 🇦🇪✨",
     "Whatever made you feel down today is temporary, but the love I have for you is completely eternal.",
     "I wish you could see yourself through my eyes for just ten seconds. You'd never doubt yourself again.",
     "You are my favorite notification, my favorite thought before sleeping, and my favorite reason to smile."
@@ -299,6 +300,7 @@ function initLoveJar() {
     "You make ordinary moments feel like poetry. Just hearing you breathe or talk about your day is my greatest comfort.",
     "My hands fit best when holding yours. Always remember you have a permanent home in my heart.",
     "I promise to always be your number one fan, your midnight listener, and your biggest protector.",
+    "Don't worry about what lies ahead, my love. You will get that job in Dubai soon, everything will fall into place, and all will be okay. I'm right here with you.",
     "You are not just my love; you are my peace, my home, and my favorite adventure, Thasleema."
   ];
 
