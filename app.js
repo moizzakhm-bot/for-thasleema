@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmileGenerator();
   initForgivenessAction();
   initLoveJar();
+  initSnapsLightbox();
 });
 
 /* ============================================================
@@ -280,6 +281,42 @@ function initLoveJar() {
         origin: { y: 0.8 },
         colors: ['#d64562', '#fbe5ea', '#c69248']
       });
+    }
+  });
+}
+
+/* ============================================================
+   9. FAV SNAPS LIGHTBOX
+============================================================ */
+function initSnapsLightbox() {
+  const lightbox = document.getElementById('snap-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const backdrop = document.querySelector('.lightbox-backdrop');
+  if (!lightbox || !lightboxImg) return;
+
+  document.querySelectorAll('.snap-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const fullSrc = card.getAttribute('data-full');
+      const caption = card.getAttribute('data-caption');
+      lightboxImg.src = fullSrc;
+      lightboxCaption.textContent = caption || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
     }
   });
 }
